@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SGCE</string>
+
+    <string name="projeto">SGCE</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_cadastro">Cadastro</string>
+
+    <string name="hello_world">Hello world!</string>
+
+</resources>
