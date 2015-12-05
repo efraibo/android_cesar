@@ -7,7 +7,56 @@
     android:background="#8B8989"
     tools:context="br.com.evandro.sgce.Cadastro"    >
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView android:text="@string/PaginaCadastro" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="50sp"
+        android:textColor="#191970"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
+    <EditText
+        android:id="@+id/editDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="40dp"
+        android:hint="Selecione a Data"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editNumRelogio"
+        android:layout_below="@id/editDate"
+        android:layout_marginTop="20dp"
+        android:hint="Digite o Número do Relógio: "
+        android:inputType="number"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editNumRelogio"
+        android:id="@+id/editNome"
+        android:layout_marginTop="20dp"
+        android:hint="Digite seu Nome: "/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editNome"
+        android:id="@+id/btnSalvarCadastro"
+        android:layout_marginTop="20dp"
+        android:hint="Salvar"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/textView"
+        android:layout_alignEnd="@+id/editDate" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Calcelar"
+        android:layout_alignTop="@+id/btnSalvarCadastro"
+        android:layout_alignEnd="@+id/editNome"
+        android:layout_toEndOf="@+id/btnSalvarCadastro" />
 </RelativeLayout>

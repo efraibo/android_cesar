@@ -21,6 +21,10 @@
             android:name=".Cadastro"
             android:label="@string/title_activity_cadastro" >
         </activity>
+        <activity
+            android:name=".Relatorio"
+            android:label="@string/title_activity_relatorio" >
+        </activity>
     </application>
 
 </manifest>
