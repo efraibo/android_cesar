@@ -15,20 +15,36 @@
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:id="@+id/editDate"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/linearCaledar"
         android:layout_below="@id/textView"
-        android:layout_marginTop="40dp"
-        android:hint="Selecione a Data"/>
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/editDate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            android:hint="Selecione a Data"
+            android:inputType="date"/>
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/calendar_blank"
+            android:onClick="dataButton"
+            />
+
+    </LinearLayout>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editNumRelogio"
-        android:layout_below="@id/editDate"
+        android:layout_below="@id/linearCaledar"
         android:layout_marginTop="20dp"
         android:hint="Digite o Número do Relógio: "
         android:inputType="number"/>
@@ -40,23 +56,37 @@
         android:id="@+id/editNome"
         android:layout_marginTop="20dp"
         android:hint="Digite seu Nome: "/>
-
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editNome"
-        android:id="@+id/btnSalvarCadastro"
-        android:layout_marginTop="20dp"
-        android:hint="Salvar"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/textView"
-        android:layout_alignEnd="@+id/editDate" />
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editNome"
+            android:id="@+id/btnSalvarCadastro"
+            android:layout_marginTop="20dp"
+            android:onClick="salvar"
+            android:hint="Salvar"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Calcelar"
+            android:layout_marginTop="20dp"
+            />
+    </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Calcelar"
-        android:layout_alignTop="@+id/btnSalvarCadastro"
-        android:layout_alignEnd="@+id/editNome"
-        android:layout_toEndOf="@+id/btnSalvarCadastro" />
+        android:layout_weight="1"
+        android:hint="Listar cadastro"
+        android:layout_marginTop="500dp"
+        android:id="@+id/btnListar"
+        android:onClick="listarTodos"
+        />
 </RelativeLayout>
