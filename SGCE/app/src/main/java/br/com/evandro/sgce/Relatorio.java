@@ -63,13 +63,31 @@ public class Relatorio extends Activity {
                 String nome = (String) parent.getAdapter().getItem(position);
                 for (Cliente cont : clientes) {
                     if (cont.getNome().equals(nome)) {
-                        Intent it = new Intent(getApplicationContext(), ClienteEditar.class);
+                        Intent it = new Intent(getApplicationContext(), activity_editar.class);
                         it.putExtra("cliente", cont);
                         startActivity(it);
                     }
                 }
             }
         });
+
+
+        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String nome = (String) parent.getAdapter().getItem(position);
+                for (Cliente cont : clientes) {
+                    if (cont.getNome().equals(nome)) {
+                        Intent it = new Intent(getApplicationContext(), activity_editar.class);
+                        it.putExtra("cliente", cont);
+                        startActivity(it);
+                    }
+                }
+            }
+        });*/
+
     }
 
     @Override

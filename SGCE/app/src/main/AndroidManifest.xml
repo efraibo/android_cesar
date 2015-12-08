@@ -25,6 +25,10 @@
             android:name=".Relatorio"
             android:label="@string/title_activity_relatorio" >
         </activity>
+        <activity
+            android:name=".activity_editar"
+            android:label="@string/title_activity_activity_editar" >
+        </activity>
     </application>
 
 </manifest>

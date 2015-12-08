@@ -9,5 +9,6 @@
     <string name="title_activity_relatorio">Relatorio</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_activity_editar">activity_editar</string>
 
 </resources>
