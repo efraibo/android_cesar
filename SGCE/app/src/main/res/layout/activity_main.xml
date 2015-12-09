@@ -7,48 +7,40 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="#8B8989"
-    tools:context=".MainActivity">
+    android:background="@color/primary"
+    tools:context=".MainActivity" >
 
-       <TextView android:text="@string/projeto" android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:textSize="50sp"
-            android:textColor="#191970"
-            android:id="@+id/textView"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+    <ImageView
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:id="@+id/imageView"
+        android:src="@mipmap/ic_energia2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"/>
 
-      <Spinner
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/spinnerCadastrados"
-          android:layout_below="@+id/textView"
-          android:layout_alignParentStart="true"
-          android:layout_marginTop="59dp"
-          >
-      </Spinner>
-      <Button
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Cadastre seus dados"
-          android:textColor="#191970"
-          android:textSize="20dp"
-          android:id="@+id/btn_Cadastrar"
-          android:layout_marginLeft="@dimen/activity_vertical_margin"
-          android:layout_marginRight="@dimen/activity_vertical_margin"
-          android:layout_marginTop="71dp"
-          android:onClick="cadastrarCliente"
-          android:layout_below="@+id/spinnerCadastrados"
-          android:layout_alignParentStart="true"
-          android:layout_alignParentEnd="true"/>
-
-    <ImageButton
+    <TextView
+        android:id="@+id/text_page_init"
+        android:text="@string/name_project"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/sair2"
-        android:layout_below="@+id/btn_Cadastrar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="76dp" />
+        android:textColor="@color/font_primary"
+        android:textSize="18dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_below="@+id/text_page_init"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="121dp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnProximaActivity"
+        android:hint="casdastro"
+        android:onClick="cadastrarCliente"/>
 </RelativeLayout>

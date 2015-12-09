@@ -1,13 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="@color/primary"
-    tools:context="br.com.evandro.sgce.Cadastro"    >
-
-    <!-- Pagina de Cadastro -->
+    tools:context="br.com.evandro.sgce.insertLeitura">
 
     <ImageView
         android:layout_width="175dp"
@@ -16,14 +17,14 @@
         android:src="@mipmap/ic_energia2"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="25dp"/>
 
-    <!-- Informações do usúario -->
+    <!-- Inserir leitura -->
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome"
+        android:text="Leitura do Contador"
         android:textSize="20dp"
         android:textColor="@color/font_primary"
         android:id="@+id/textView2"
@@ -34,30 +35,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editNome"
-        android:hint="Digite seu Nome"
+        android:hint="Insira o valor atual do contador"
         android:layout_below="@+id/textView2"
         android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="N° Contatodor de Energia"
-        android:layout_marginTop="25dp"
-        android:textColor="@color/font_primary"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/editNome"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editNumRelogio"
-        android:hint="N° Contatodor de Energia"
-        android:inputType="number"
-        android:layout_below="@+id/editNome"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="63dp" />
 
     <!-- Botões -->
     <LinearLayout
@@ -65,8 +45,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/linearLayout"
-        android:layout_below="@+id/editNumRelogio"
-        android:layout_alignParentStart="true">
+        android:layout_below="@+id/editNome"
+        android:layout_alignParentEnd="true">
 
         <Button
             android:layout_width="match_parent"
@@ -84,7 +64,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Calcelar"
+            android:hint="Limpar"
             android:layout_marginTop="20dp"
             android:textColorHint="@color/font_primary"
             android:textStyle="bold" />

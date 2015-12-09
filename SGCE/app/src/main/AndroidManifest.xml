@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.evandro.sgce" >
+    package="br.com.evandro.sgce">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,16 +20,13 @@
         </activity>
         <activity
             android:name=".Cadastro"
-            android:label="@string/title_activity_cadastro" >
-        </activity>
+            android:label="@string/title_activity_cadastro"></activity>
         <activity
             android:name=".Relatorio"
-            android:label="@string/title_activity_relatorio" >
-        </activity>
+            android:label="@string/title_activity_relatorio"></activity>
         <activity
-            android:name=".activity_editar"
-            android:label="@string/title_activity_activity_editar" >
-        </activity>
+            android:name=".insertLeitura"
+            android:label="@string/title_activity_insert_leitura"></activity>
     </application>
 
 </manifest>

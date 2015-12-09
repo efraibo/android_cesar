@@ -18,24 +18,20 @@ public class Cadastro extends Activity {
         setContentView(R.layout.activity_cadastro);
         helper = new DatabaseHelper(this);
     }
-    /*
-    public void dataButton(View view){
-        DateDialog dialog = new DateDialog(view);
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        dialog.show(ft, "DatePicker");
-    }*/
 
     public void salvar(View view){
         Cliente cliente = new Cliente();
         String nome = ((EditText) findViewById(R.id.editNome)).getText().toString();
+        String numero = ((EditText) findViewById(R.id.editNumRelogio)).getText().toString();
 
         cliente.setNome(nome);
+        cliente.setNumero(numero);
 
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
         values.put(Cliente.NOME, cliente.getNome());
-
+        values.put(Cliente.NUMERO, cliente.getNumero());
 
         long resultado = db.insert(Cliente.TABELA_CLIENTES, null, values);
 
@@ -43,8 +39,12 @@ public class Cadastro extends Activity {
             Toast.makeText(this, "Cadastrado com Sucesso!",
                     Toast.LENGTH_SHORT).show();
 
+            Intent intent = new Intent(this, insertLeitura.class);
+            startActivity(intent);
+
             //limpando editText
-            ((EditText) findViewById(R.id.editNome)).setText("");
+            //((EditText) findViewById(R.id.editNome)).setText("");
+            //((EditText) findViewById(R.id.editNumRelogio)).setText("");
 
 
         }else{

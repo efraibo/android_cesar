@@ -7,9 +7,13 @@ public class Cliente implements Serializable{
     public static final String TABELA_CLIENTES = "clientes";
     public static final String ID = "id";
     public static final String NOME = "nome";
+    public static final String NUMERO = "numero";
+
 
     private String id;
     private String nome;
+    private String numero;
+
 
     public Cliente(){}
 
@@ -29,4 +33,9 @@ public class Cliente implements Serializable{
         this.nome = nome;
     }
 
+    public String getNumero() { return numero; }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
 }

@@ -6,8 +6,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="br.com.evandro.sgce.activity_editar">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
 
     <EditText
         android:layout_marginTop="30dp"

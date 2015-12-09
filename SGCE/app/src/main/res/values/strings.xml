@@ -1,14 +1,10 @@
 <resources>
     <string name="app_name">SGCE</string>
-
     <string name="projeto">SGCE</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_cadastro">Cadastro</string>
-
     <string name="PaginaCadastro">SGCE</string>
     <string name="title_activity_relatorio">Relatorio</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_activity_editar">activity_editar</string>
-
+    <string name="name_project">Sistema de Gerênciamento de Energia</string>
+    <string name="title_activity_insert_leitura">insertLeitura</string>
 </resources>

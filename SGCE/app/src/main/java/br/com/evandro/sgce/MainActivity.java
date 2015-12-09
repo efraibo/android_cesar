@@ -25,10 +25,16 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         helper = new DatabaseHelper(this);
-        listaCadastrados();
+        //listaCadastrados();
     }
 
-    public void listaCadastrados()
+
+
+
+
+
+
+    /*public void listaCadastrados()
     {
         Spinner spinner = (Spinner) findViewById(R.id.spinnerCadastrados);
         SQLiteDatabase db = helper.getWritableDatabase();
@@ -53,7 +59,7 @@ public class MainActivity extends Activity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, android.R.id.text1, nomes);
         spinner.setAdapter(adapter);
-    }
+    }*/
 
     public void cadastrarCliente(View view){
         Intent intent = new Intent(this, Cadastro.class);

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cores do tema Matrial -->
+    <color name="primary">#FFF</color>
+    <color name="font_primary">#006400</color>
+
+</resources>
