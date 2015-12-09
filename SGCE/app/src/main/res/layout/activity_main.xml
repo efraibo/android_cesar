@@ -35,12 +35,6 @@
         android:id="@+id/progressBar"
         android:layout_below="@+id/text_page_init"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="121dp" />
+        android:layout_marginTop="121dp"/>
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnProximaActivity"
-        android:hint="casdastro"
-        android:onClick="cadastrarCliente"/>
 </RelativeLayout>

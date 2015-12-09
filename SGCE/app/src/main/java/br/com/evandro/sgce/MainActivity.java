@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,48 +21,56 @@ public class MainActivity extends Activity {
 
     private DatabaseHelper helper;
 
+    protected static final int TIMER_RUNTIME = 2000;
+
+    protected boolean mbActive;
+    protected ProgressBar mProgressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         helper = new DatabaseHelper(this);
-        //listaCadastrados();
+        progressStart();
     }
 
+    public void progressStart(){
+        mProgressBar = (ProgressBar)findViewById(R.id.progressBar);
 
+        final Thread timerThread = new Thread(){
 
+            @Override
+            public void run(){
+                mbActive = true;
 
+                try {
+                    int waited = 0;
+                    while (mbActive && (waited < TIMER_RUNTIME)){
+                        sleep(200);
+                        if (mbActive){
+                            waited += 200;
+                            updateProgress(waited);
+                        }
+                    }
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }finally {
+                    onContinue();
+                }
+            }
+        };
+        timerThread.start();
+    }
 
+    public void updateProgress(final int timePassed){
+        if (null != mProgressBar){
 
-
-    /*public void listaCadastrados()
-    {
-        Spinner spinner = (Spinner) findViewById(R.id.spinnerCadastrados);
-        SQLiteDatabase db = helper.getWritableDatabase();
-        Cursor c = db.query(Cliente.TABELA_CLIENTES, new String[]{Cliente.NOME},
-                null, null, null, null, null);
-
-        final List<Cliente> clientes = new ArrayList<Cliente>();
-        Cliente cliente;
-
-        c.moveToFirst();
-        for(int i = 0; i < c.getCount(); i++){
-            cliente = new Cliente();
-            cliente.setNome(c.getString(c.getColumnIndex(Cliente.NOME)));
-            clientes.add(cliente);
-            c.moveToNext();
+            final  int progress = mProgressBar.getMax() * timePassed / TIMER_RUNTIME;
+            mProgressBar.setProgress(progress);
         }
-        c.close();
-        String [] nomes = new String[clientes.size()];
-        for(int i = 0; i < clientes.size(); i++){
-            nomes[i] = clientes.get(i).getNome();
-        }
+    }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, android.R.id.text1, nomes);
-        spinner.setAdapter(adapter);
-    }*/
-
-    public void cadastrarCliente(View view){
+    public void onContinue(){
         Intent intent = new Intent(this, Cadastro.class);
         startActivity(intent);
     }
