@@ -55,6 +55,7 @@ public class MainActivity extends Activity {
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }finally {
+                    finish();
                     onContinue();
                 }
             }

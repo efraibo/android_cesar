@@ -19,21 +19,21 @@ public class activity_editar extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_editar);
+        //setContentView(R.layout.activity_editar);
         cliente = (Cliente) getIntent().getSerializableExtra("cliente");
         helper = new DatabaseHelper(this);
         preencherCampos();
     }
 
     private void preencherCampos(){
-        ((EditText)findViewById(R.id.editNomeEditar)).setText(cliente.getNome());
+        //((EditText)findViewById(R.id.editNomeEditar)).setText(cliente.getNome());
     }
 
     public void editar(View view){
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(Cliente.NOME, ((EditText)findViewById(R.id.editNomeEditar)).getText().toString());
+        //values.put(Cliente.NOME, ((EditText)findViewById(R.id.editNomeEditar)).getText().toString());
 
 
         long resultado = db.update(Cliente.TABELA_CLIENTES, values, "id=?", new String[]{cliente.getId()});

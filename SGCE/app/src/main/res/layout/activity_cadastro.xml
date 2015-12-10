@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome"
+        android:text="Numero de Contrato"
         android:textSize="20dp"
         android:textColor="@color/font_primary"
         android:id="@+id/textView2"
@@ -34,15 +34,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editNome"
-        android:hint="Digite seu Nome"
+        android:hint="Digite o Número do Contrato"
         android:layout_below="@+id/textView2"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:inputType="number"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="N° Contatodor de Energia"
+        android:text="N° Contador de Energia"
         android:layout_marginTop="25dp"
         android:textColor="@color/font_primary"
         android:id="@+id/textView3"
@@ -53,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editNumRelogio"
-        android:hint="N° Contatodor de Energia"
+        android:hint="N° Contador de Energia"
         android:inputType="number"
         android:layout_below="@+id/editNome"
         android:layout_alignParentEnd="true"
