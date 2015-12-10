@@ -7,5 +7,4 @@
     <string name="title_activity_relatorio">Relatorio</string>
     <string name="name_project">Sistema de Gerênciamento de Energia</string>
     <string name="title_activity_insert_leitura">insertLeitura</string>
-    <string name="selecine">selecione</string>
 </resources>

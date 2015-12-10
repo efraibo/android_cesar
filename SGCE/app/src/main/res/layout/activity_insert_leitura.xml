@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/primary"
-    tools:context="br.com.evandro.sgce.insertLeitura">
+    tools:context=".Activity.insertLeitura">
 
     <ImageView
         android:layout_width="175dp"
@@ -21,8 +21,6 @@
 
     <!-- Inserir leitura -->
 
-
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -34,7 +32,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/editNome"
+
             android:id="@+id/btnData"
             android:hint="Selecione a Data"
             android:layout_weight="1"
@@ -52,17 +50,16 @@
         android:textSize="20dp"
         android:textColor="@color/font_primary"
         android:id="@+id/textView2"
-        android:layout_below="@+id/linearLayoutBtnData"
+        android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editNumLeitura"
+        android:id="@+id/editLeitura"
         android:hint="Insira o valor atual do contador"
         android:layout_below="@+id/textView2"
-        android:layout_alignParentEnd="true"
-        android:inputType="number"/>
+        android:layout_alignParentEnd="true" />
 
     <!-- Botões -->
     <LinearLayout
@@ -70,13 +67,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/linearLayout"
-        android:layout_below="@+id/editNumLeitura"
+        android:layout_below="@+id/editLeitura"
         android:layout_alignParentEnd="true">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/editNome"
+            android:layout_below="@id/editLeitura"
             android:id="@+id/btnSalvarCadastro"
             android:layout_marginTop="20dp"
             android:onClick="salvar"
@@ -93,6 +90,6 @@
             android:layout_marginTop="20dp"
             android:textColorHint="@color/font_primary"
             android:textStyle="bold"
-            />
+            android:onClick="clearCampos" />
     </LinearLayout>
 </RelativeLayout>
