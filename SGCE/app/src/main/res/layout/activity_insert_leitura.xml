@@ -59,7 +59,8 @@
         android:id="@+id/editLeitura"
         android:hint="Insira o valor atual do contador"
         android:layout_below="@+id/textView2"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:inputType="number"/>
 
     <!-- Botões -->
     <LinearLayout
@@ -76,7 +77,7 @@
             android:layout_below="@id/editLeitura"
             android:id="@+id/btnSalvarCadastro"
             android:layout_marginTop="20dp"
-            android:onClick="salvar"
+            android:onClick="salvarContador"
             android:hint="Salvar"
             android:layout_weight="1"
             android:textColorHint="@color/font_primary"
