@@ -3,6 +3,7 @@ package br.com.evandro.sgce.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -113,6 +114,11 @@ public class insertLeitura extends DefaultActivity {
 
     public void clearCampos (View view){
         editInserirLeitura.setText("");
+    }
+
+    public void chamarAgenda(View view){
+        Intent i = new Intent(this, ContentProviderMain.class);
+        startActivity(i);
     }
 
 }
