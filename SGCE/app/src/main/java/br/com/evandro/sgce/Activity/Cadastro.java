@@ -9,9 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
-
 import br.com.evandro.sgce.Database.DatabaseHelper;
 import br.com.evandro.sgce.DefaultActivity;
 import br.com.evandro.sgce.R;
@@ -24,11 +21,7 @@ public class Cadastro extends DefaultActivity {
     EditText editTextNumero;
     EditText editTextEndereco;
 
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
+   // private GoogleApiClient client;
 
 
     @Override
@@ -42,15 +35,15 @@ public class Cadastro extends DefaultActivity {
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     public void salvar(View view) {
         if (validarCampos(editTextNumero) && validarCampos(editTextEndereco)){
 
             usuario =  new Usuario();
-            usuario.setNumero(editTextNumero.toString());
-            usuario.setEndereco(editTextEndereco.toString());
+            usuario.setNumero(editTextNumero.getText().toString());
+            usuario.setEndereco(editTextEndereco.getText().toString());
 
             SQLiteDatabase db = helper.getWritableDatabase();
             ContentValues values = new ContentValues();
@@ -80,10 +73,7 @@ public class Cadastro extends DefaultActivity {
 
 
 
-    public void listarTodos(View view) {
-        Intent i = new Intent(this, Listar.class);
-        startActivity(i);
-    }
+
 
     @Override
     protected void onDestroy() {

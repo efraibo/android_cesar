@@ -22,8 +22,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 + Usuario.NUMERO + " TEXT)");
 
         db.execSQL("CREATE TABLE " + Contador.TABELA_CONTADOR +
-                "(" + Contador.ID + " INTEGER PRIMARY KEY," + Contador.DATA + " TEXT, "
-                + Contador.NUMERO_LEITURA + " TEXT)");
+                "(" + Contador.ID + " INTEGER PRIMARY KEY," + Contador.DATA + " DATE, "
+                + Contador.NUMERO_LEITURA + " INTEGER)");
     }
 
     @Override

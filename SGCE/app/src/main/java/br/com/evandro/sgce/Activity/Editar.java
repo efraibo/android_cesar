@@ -23,8 +23,17 @@ public class Editar extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar);
 
-        usuario = (Usuario) getIntent().getSerializableExtra("usuario");
+        String temp = (String) getIntent().getStringExtra("usuario");
+        usuario = new Usuario();
+
+        String endereco = temp.split(" - ")[0];
+        String numero = temp.split(" - ")[1];
+        usuario.setEndereco(endereco);
+        usuario.setNumero(numero);
+
+
         helper = new DatabaseHelper(this);
+
         preencherCampos();
     }
 
@@ -51,7 +60,7 @@ public class Editar extends Activity {
                     Toast.LENGTH_SHORT).show();
         }
 
-        startActivity(new Intent(this, Cadastro.class));
+        startActivity(new Intent(this, insertLeitura.class));
     }
 
     public void apagar(View view){
@@ -65,7 +74,7 @@ public class Editar extends Activity {
             Toast.makeText(this, "Não foi possível apagar o contato",
                     Toast.LENGTH_SHORT).show();
         }
-        startActivity(new Intent(this, Cadastro.class));
+        startActivity(new Intent(this, insertLeitura.class));
     }
 
     @Override

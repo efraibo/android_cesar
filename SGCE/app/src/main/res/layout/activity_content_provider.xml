@@ -6,7 +6,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/primary"
     tools:context=".Activity.ContentProvider">
 
 
@@ -24,7 +23,9 @@
             android:layout_height="fill_parent"
             android:id="@+id/listContatos"
             android:layout_below="@id/textViewAgenda"
-            android:textColor="@color/font_primary">
+            android:textColor="@android:color/black"
+            >
+
         </ListView>
 
 

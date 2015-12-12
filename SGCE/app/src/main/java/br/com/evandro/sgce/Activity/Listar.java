@@ -49,13 +49,12 @@ public class Listar extends Activity {
             c.moveToNext();
         }
         c.close();
-        String [] cadastros = new String[usuarios.size()];
+        final String [] cadastros = new String[usuarios.size()];
         for(int i = 0; i < usuarios.size(); i++){
-            cadastros[i] = usuarios.get(i).getEndereco();
-            cadastros[i] = usuarios.get(i).getNumero();
+            cadastros[i] = usuarios.get(i).getEndereco() + " - " + usuarios.get(i).getNumero();
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, cadastros);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cadastros);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -63,15 +62,12 @@ public class Listar extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                String endereco = (String) parent.getAdapter().getItem(position);
-                String numero = (String) parent.getAdapter().getItem(position);
-                for (Usuario cont : usuarios) {
-                    if (cont.getEndereco().equals(endereco) && cont.getNumero().equals(numero)) {
-                        Intent it = new Intent(getApplicationContext(), Editar.class);
-                        it.putExtra("usuario", cont);
-                        startActivity(it);
-                    }
-                }
+                String currentString  = (String)parent.getAdapter().getItem(position);
+
+                Intent it = new Intent(getApplicationContext(), Editar.class);
+                it.putExtra("usuario", currentString);
+                startActivity(it);
+
             }
         });
     }

@@ -58,7 +58,7 @@
         android:inputType="number"
         android:layout_below="@+id/editEndereco"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="63dp" />
+        android:layout_marginTop="50dp" />
 
     <!-- Botões -->
     <LinearLayout

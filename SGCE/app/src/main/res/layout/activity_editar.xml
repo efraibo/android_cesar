@@ -73,10 +73,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/editEnderecoEditar"
-            android:id="@+id/btnSalvarCadastro"
+            android:id="@+id/btnEditar"
             android:layout_marginTop="20dp"
-            android:onClick="salvar"
-            android:hint="Salvar"
+            android:onClick="editar"
+            android:hint="Editar"
             android:layout_weight="1"
             android:textColorHint="@color/font_primary"
             android:textStyle="bold" />
@@ -85,10 +85,11 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Calcelar"
+            android:hint="Excluir"
+            android:id="@+id/btnExcluir"
             android:layout_marginTop="20dp"
             android:textColorHint="@color/font_primary"
             android:textStyle="bold"
-            android:onClick="cancel"/>
+            android:onClick="apagar"/>
     </LinearLayout>
 </RelativeLayout>

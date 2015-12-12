@@ -121,6 +121,11 @@ public class insertLeitura extends DefaultActivity {
         startActivity(i);
     }
 
+    public void listarTodos(View view) {
+        Intent i = new Intent(this, Listar.class);
+        startActivity(i);
+    }
+
     public void editarCadatro(View view) {
 
     }
