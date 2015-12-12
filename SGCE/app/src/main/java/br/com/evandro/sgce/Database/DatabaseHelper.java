@@ -4,8 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import br.com.evandro.sgce.Controllers.Contador;
-import br.com.evandro.sgce.Controllers.Usuario;
+import br.com.evandro.sgce.base.Contador;
+import br.com.evandro.sgce.base.Usuario;
 
 public class DatabaseHelper extends SQLiteOpenHelper{
     private static int VERSAO = 1;

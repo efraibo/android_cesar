@@ -14,10 +14,10 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-import br.com.evandro.sgce.Controllers.Contador;
 import br.com.evandro.sgce.Database.DatabaseHelper;
 import br.com.evandro.sgce.DefaultActivity;
 import br.com.evandro.sgce.R;
+import br.com.evandro.sgce.base.Contador;
 
 public class insertLeitura extends DefaultActivity {
     private DatabaseHelper helper;
@@ -121,4 +121,7 @@ public class insertLeitura extends DefaultActivity {
         startActivity(i);
     }
 
+    public void editarCadatro(View view) {
+
+    }
 }

@@ -10,4 +10,6 @@
     <string name="title_activity_content_provider">ContentProvider</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_listar">Listar</string>
+    <string name="title_activity_editar">Editar</string>
 </resources>

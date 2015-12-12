@@ -1,4 +1,4 @@
-package br.com.evandro.sgce.Controllers;
+package br.com.evandro.sgce.base;
 
 import java.io.Serializable;
 

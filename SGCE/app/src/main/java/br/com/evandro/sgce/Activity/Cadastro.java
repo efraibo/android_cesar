@@ -12,10 +12,10 @@ import android.widget.Toast;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-import br.com.evandro.sgce.Controllers.Usuario;
 import br.com.evandro.sgce.Database.DatabaseHelper;
 import br.com.evandro.sgce.DefaultActivity;
 import br.com.evandro.sgce.R;
+import br.com.evandro.sgce.base.Usuario;
 
 public class Cadastro extends DefaultActivity {
     private DatabaseHelper helper;
@@ -81,7 +81,7 @@ public class Cadastro extends DefaultActivity {
 
 
     public void listarTodos(View view) {
-        Intent i = new Intent(this, Relatorio.class);
+        Intent i = new Intent(this, Listar.class);
         startActivity(i);
     }
 
