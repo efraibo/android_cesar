@@ -73,6 +73,12 @@ public class Listar extends Activity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        onCreate(null);
+    }
+
+    @Override
     protected void onDestroy() {
         helper.close();
         super.onDestroy();

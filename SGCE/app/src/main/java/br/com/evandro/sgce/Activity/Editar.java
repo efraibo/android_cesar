@@ -18,6 +18,7 @@ public class Editar extends Activity {
     private Usuario usuario;
     private DatabaseHelper helper;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,6 @@ public class Editar extends Activity {
         String numero = temp.split(" - ")[1];
         usuario.setEndereco(endereco);
         usuario.setNumero(numero);
-
 
         helper = new DatabaseHelper(this);
 
