@@ -29,9 +29,18 @@
         android:layout_below="@+id/imageView"
         android:layout_alignParentEnd="true">
 
-        <Button
-            android:layout_width="match_parent"
+        <EditText
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:hint="DD/MM/AAAA"
+            android:textColorHint="@color/font_primary"
+            android:id="@+id/txtData"
+            />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
             android:id="@+id/btnData"
             android:hint="Selecione a Data"
             android:layout_weight="1"

@@ -27,7 +27,8 @@ public class insertLeitura extends DefaultActivity {
     EditText editInserirLeitura;
     Calendar calendar;
     private int ano, mes, dia;
-    private Button dataConsumo;
+    //private Button dataConsumo;
+    private EditText dataConsumo;
     private Button btnSalvar;
 
     @Override
@@ -36,6 +37,7 @@ public class insertLeitura extends DefaultActivity {
         setContentView(R.layout.activity_insert_leitura);
 
         btnSalvar = (Button) findViewById(R.id.btnSalvarCadastro);
+
         editInserirLeitura = (EditText) findViewById(R.id.editLeitura);
 
         calendar = Calendar.getInstance();
@@ -43,8 +45,8 @@ public class insertLeitura extends DefaultActivity {
         mes = calendar.get(Calendar.MONTH);
         dia = calendar.get(Calendar.DAY_OF_MONTH);
 
-        dataConsumo = (Button) findViewById(R.id.btnData);
-        dataConsumo.setText(dia + "/" + (mes+1) + "/" + ano);
+        dataConsumo = (EditText) findViewById(R.id.txtData);
+        dataConsumo.setText(mes + "/" + (dia+1) + "/" + ano);
     }
 
     public void salvarContador(View view){
@@ -55,6 +57,7 @@ public class insertLeitura extends DefaultActivity {
             ContentValues values = new ContentValues();
 
             contador = new Contador();
+            //contador.setData(dataConsumo.getText().toString());
             contador.setData(dataConsumo.getText().toString());
             contador.setNumero_leitura(editInserirLeitura.getText().toString());
 
