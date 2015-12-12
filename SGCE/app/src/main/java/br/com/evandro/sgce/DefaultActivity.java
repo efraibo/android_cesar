@@ -38,7 +38,7 @@ public class DefaultActivity extends Activity {
     }
 
     public boolean validarCampos(EditText editText){
-        if (editText != null && !String.valueOf(editText).isEmpty()){
+        if (!String.valueOf(editText.getText()).isEmpty()){
             return true;
         }
         return false;

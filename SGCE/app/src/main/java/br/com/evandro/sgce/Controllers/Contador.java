@@ -6,7 +6,7 @@ public class Contador implements Serializable{
 
     public static final String TABELA_CONTADOR = "contador";
     public static final String ID = "_id";
-    public static final String DATA = "data";
+    public static final String DATA = "data_leitura";
     public static final String NUMERO_LEITURA = "numero_leitura";
 
     private String id;

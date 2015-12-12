@@ -21,19 +21,21 @@ import br.com.evandro.sgce.R;
 public class insertLeitura extends DefaultActivity {
     private DatabaseHelper helper;
 
+    SQLiteDatabase db;
     Contador contador;
-    Button btnInserirData;
     EditText editInserirLeitura;
+    Calendar calendar;
     private int ano, mes, dia;
     private Button dataConsumo;
-    Calendar calendar;
+    private Button btnSalvar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_leitura);
+
+        btnSalvar = (Button) findViewById(R.id.btnSalvarCadastro);
         editInserirLeitura = (EditText) findViewById(R.id.editLeitura);
-        btnInserirData = (Button) findViewById(R.id.btnData);
 
         calendar = Calendar.getInstance();
         ano = calendar.get(Calendar.YEAR);
@@ -45,28 +47,37 @@ public class insertLeitura extends DefaultActivity {
     }
 
     public void salvarContador(View view){
+        if (!String.valueOf(editInserirLeitura.getText()).isEmpty()){
+            helper = new DatabaseHelper(this);
+            db = helper.getWritableDatabase();
 
-        contador = new Contador();
-        contador.setData(btnInserirData.getText().toString());
-        contador.setNumero_leitura(editInserirLeitura.getText().toString());
+            ContentValues values = new ContentValues();
 
-        SQLiteDatabase db = helper.getWritableDatabase();
-        ContentValues values = new ContentValues();
+            contador = new Contador();
+            contador.setData(dataConsumo.getText().toString());
+            contador.setNumero_leitura(editInserirLeitura.getText().toString());
 
-        values.put(Contador.DATA, contador.getData());
-        values.put(Contador.NUMERO_LEITURA, contador.getNumero_leitura());
+            values.put(Contador.DATA, contador.getData());
+            values.put(Contador.NUMERO_LEITURA, contador.getNumero_leitura());
 
-        long resultado = db.insert(Contador.TABELA_CONTADOR, null, values);
+            long resultado = db.insert(Contador.TABELA_CONTADOR, null, values);
 
-        if (resultado != -1){
-            Toast.makeText(this, "Cadastrado com Sucesso!",
-                    Toast.LENGTH_SHORT).show();
+            if (resultado != -1){
+                Toast.makeText(this, "Cadastrado com Sucesso!",
+                        Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(this, "Não foi possível salvar Contador",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            db.close();
+            clearCampos(view);
         }
         else {
-            Toast.makeText(this, "Não foi possível salvar Contador",
+            Toast.makeText(this, "Por favor preencha todos os campos!",
                     Toast.LENGTH_SHORT).show();
         }
-
     }
 
     @Override
@@ -100,7 +111,7 @@ public class insertLeitura extends DefaultActivity {
         }
     };
 
-    private void clearCampos (){
+    public void clearCampos (View view){
         editInserirLeitura.setText("");
     }
 

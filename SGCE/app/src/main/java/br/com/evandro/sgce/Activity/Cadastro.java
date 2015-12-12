@@ -24,8 +24,6 @@ public class Cadastro extends DefaultActivity {
     EditText editTextNumero;
     EditText editTextEndereco;
 
-
-    
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -65,12 +63,18 @@ public class Cadastro extends DefaultActivity {
             if (resultado != -1) {
                 Toast.makeText(this, "Cadastrado com Sucesso!",
                         Toast.LENGTH_SHORT).show();
+
+                finish();
                 startActivity(new Intent(this, insertLeitura.class));
             }
             else {
                 Toast.makeText(this, "Não foi possível salvar o cliente",
                         Toast.LENGTH_SHORT).show();
             }
+        }
+        else {
+            Toast.makeText(this, "Por favor preencha todos os campos!",
+                    Toast.LENGTH_SHORT).show();
         }
     }
 

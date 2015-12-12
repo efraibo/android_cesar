@@ -49,6 +49,7 @@ public class MainActivity extends Activity {
                         classe = Cadastro.class;
                     }
 
+                    finish();
                     startActivity(new Intent(context, classe));
                 }catch (Exception e){
                     e.printStackTrace();
