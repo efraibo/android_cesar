@@ -68,7 +68,8 @@
         android:hint="Insira o valor atual do contador"
         android:layout_below="@+id/textView2"
         android:layout_alignParentEnd="true"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:textColorHint="@color/font_primary"/>
 
     <!-- Botões -->
     <LinearLayout
@@ -112,8 +113,8 @@
         android:layout_marginTop="10dp"
         android:hint="Altere seu cadastro!"
         android:textSize="20dp"
-        android:textColor="@color/font_primary"
-        android:onClick="listarTodos"/>
+        android:onClick="listarTodos"
+        android:textColorHint="@color/font_primary"/>
 
     <LinearLayout
         android:layout_width="fill_parent"

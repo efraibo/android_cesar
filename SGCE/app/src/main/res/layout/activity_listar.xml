@@ -5,6 +5,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/font_primary"
 
     tools:context="br.com.evandro.sgce.Activity.Listar">
 
@@ -13,18 +14,23 @@
         android:layout_height="wrap_content"
         android:text="Lista de Cadastro"
         android:id="@+id/txtViewListarCadastro"
-        android:textColorHint="@color/font_primary"
         android:textSize="20dp"/>
-
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/txtViewListarCadastro"
+        >
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listarCadastro"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColorHint="@color/font_primary"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/txtViewListarCadastro"/>
+        android:layout_below="@id/txtViewListarCadastro"
 
+        android:cacheColorHint="@android:color/black"
+        />
+    </LinearLayout>
 
 </RelativeLayout>
